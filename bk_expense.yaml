@@ -99,5 +99,6 @@
       state: started
       enabled: yes
   
+# for checking status netstat -lntp and curl http://backend.dsoaws.fun:8080/health
 
   

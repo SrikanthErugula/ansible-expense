@@ -59,3 +59,5 @@
       enabled: true
       state: started
       daemon_reload: true
+
+# for checking status netstat -lntp and curl http://frontend.dsoaws.fun:8080/health
