@@ -1,5 +1,5 @@
 - name: set up Backend for Expensive
-  hosts: exbk
+  hosts: backend
   become: yes
   tasks:
   - name: Disabling NODEJS 
@@ -13,7 +13,7 @@
       name: nodejs
       state: present
 
-  - name: Create expense user
+  - name: Creating expense user
     ansible.builtin.user:
       name: expense
       shell: /bin/bash
@@ -29,15 +29,15 @@
       state: directory # present ani kuda ivvachu 
       path: /app
 
-  - name: Removing backend.zip file
-    ansible.builtin.file:
-      path: /tmp/backend.zip
-      state: absent
-  
-  # - name: create backend.zip file directory
+  # - name: Removing backend.zip file
   #   ansible.builtin.file:
-  #     state: directory
   #     path: /tmp/backend.zip
+  #     state: absent
+  
+  - name: create backend.zip file directory
+    ansible.builtin.file:
+      state: directory
+      path: /tmp/backend.zip
 
   - name: Download Expense Backend
     ansible.builtin.get_url:
