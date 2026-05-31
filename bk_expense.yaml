@@ -29,10 +29,10 @@
       state: directory # present ani kuda ivvachu 
       path: /app
 
-  # - name: Removing backend.zip file
-  #   ansible.builtin.file:
-  #     path: /tmp/backend.zip
-  #     state: absent
+  - name: Removing backend.zip file
+    ansible.builtin.file:
+      path: /tmp/backend.zip
+      state: absent
   
   # - name: create backend.zip file directory
   #   ansible.builtin.file:
