@@ -58,7 +58,7 @@
       record: "{{ item.item }}.{{ domain_name }}" # mongodb.daws86s.fun # class 1:19:00 min in session24
       type: A
       ttl: 1
-      value: "{{ item.instances[*].private_ip_address }}" # item loki loop o/p vastundhi 
+      value: "{{ item.instances[0].private_ip_address }}" # item loki loop o/p vastundhi 
 
       overwrite: true # so ikkada present ayyi vunte dhanni replace ayyi new ga update avuthundi 
     loop: "{{ ec2_output.results }}" # see in notes
@@ -72,7 +72,7 @@
       record: "{{ domain_name }}" # daws86s.fun
       type: A
       ttl: 1
-      value: "{{ item.instances[*].public_ip_address }}"
+      value: "{{ item.instances[0].public_ip_address }}"
       overwrite: true
     when: item.item == "frontend"
     loop: "{{ ec2_output.results }}"
