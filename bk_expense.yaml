@@ -83,7 +83,7 @@
       state: present
 
   - name: Load MySQL schema
-    ansible.builtin.shell: mysql -h exdb.dsoaws.fun -uroot -pExpenseApp@1 < /app/schema/backend.sql
+    ansible.builtin.shell: mysql -h database.dsoaws.fun -uroot -pExpenseApp@1 < /app/schema/backend.sql
 
   
   - name: daemon reload enable and start
